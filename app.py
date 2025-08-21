@@ -216,10 +216,14 @@ with tab_cluster:
     k = st.slider("Anzahl Cluster (k)", min_value=2, max_value=8, value=3, step=1)
 
     if features:
-        from sklearn.preprocessing import StandardScaler
-        from sklearn.cluster import KMeans
-        from sklearn.decomposition import PCA
-        import matplotlib.pyplot as plt
+        try:
+            from sklearn.preprocessing import StandardScaler
+            from sklearn.cluster import KMeans
+            from sklearn.decomposition import PCA
+            import matplotlib.pyplot as plt
+        except Exception as e:
+            st.error(f"Clustering-Module konnten nicht geladen werden: {e}. Bitte installieren/aktualisieren Sie scikit-learn und matplotlib.")
+            st.stop()
 
         X = agg_city[features].astype(float).values
         X_scaled = StandardScaler().fit_transform(X)

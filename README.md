@@ -46,3 +46,9 @@ Unter dem Tab **„Stadt-Cluster“** können Städte per **K-Means** gruppiert 
 - Wählen Sie die **Features** (Wasserzähler, WMZ, KMZ, HKV).
 - Legen Sie **k** (2–8) fest.
 - Ergebnis als Tabelle und **PCA-Scatterplot** (matplotlib), plus **CSV-Export**.
+
+
+## Python-Version (Streamlit Cloud)
+Dieses Repo enthält `.python-version`/`runtime.txt` mit **Python 3.12**, um Build-Probleme (z. B. Pandas/Scikit-Learn) unter Python 3.13 zu vermeiden.
+Falls Sie lokal mit Python 3.13 arbeiten, stellen Sie sicher, dass `scikit-learn>=1.6` installiert ist.
+
